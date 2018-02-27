@@ -92,7 +92,7 @@ function startgamefunction(event) {
 
 		// change the heading2 text to have a random word from array
 		var arraytoheading = $("h2").html(wordsarray[firstword]);
-		$('h2').css('color', 'blue');
+		$('h2').css('color', 'green');
 
 		$('p').html('Time is ticking. Tick Tock.');
 

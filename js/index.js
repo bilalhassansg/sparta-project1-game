@@ -17,59 +17,81 @@ var arraytoheading = $("h2").html(wordsarray[firstword]);
 var restartgame = false;
 
 // start game
-var startgame = true;
+//var startgame = $('button');
+
+startgamefunction();
 
 // get the user input from HTML
 document.querySelector('form.wordform').addEventListener('submit', function(event) {
-	event.preventDefault();
-	var value = word.value;
-	word.value = '';
+event.preventDefault();
+var value = word.value;
+word.value = '';
 
 
-	// create a variable for the user to match the word
-	var randomtext = $(arraytoheading).html();
+// create a variable for the user to match the word
+var randomtext = $(arraytoheading).html();
 
-	function newwordfromarray() {
-		$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
+function newwordfromarray() {
+	$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
 
-	}
+}
 
-	// be sure the correct value and random text is matching
-	// match user input to h2
-	if (value === randomtext) {
+// be sure the correct value and random text is matching
+// match user input to h2
+if (value === randomtext) {
 
-		//alert('Well done'); // confirm word is correct
-		console.log(value);
-		// get a new random word from the array to display in h2
-		newwordfromarray();
-		// count how many words for each input
-		$('h3').html(++countword);
-	}
-	else{ 
-		alert('Fail');
-	}
-	// clearing the input box
-	//word.value = "";
+	//alert('Well done'); // confirm word is correct
+	console.log(value);
+	// get a new random word from the array to display in h2
+	newwordfromarray();
+	// count how many words for each input
+	$('h3').html(++countword);
+}
+else{ 
+	alert('Fail');
+}
+// clearing the input box
+word.value = "";
 
 });
 
 // countdown timer from 30 seconds
+// set the time limit to 30 seconds
+var secondsleft = 31;
 
-var secondsleft = 15;
-var countdown = setInterval(timer, 1000); // set interval to 1 second
+var countdown = setInterval(timer, 1000);
 
+// create  new function for the timer
 function timer() {
-	secondsleft=secondsleft-1; // minus one second from the timer
-	if (secondsleft <=0) {
-		clearInterval(countdown);
-		// alert the user time is up and can no longer continue
-		for(i = secondsleft+1; i > 0; i--) {
-		alert('time is up');
-		// change h2 to 'end of game'
-		$('h2').html('End of game');
-}
-	}
-	//$('#timer').html('Timer');
 
-	document.getElementById('timer').innerHTML=secondsleft + 'seconds';
+// minus one second from the timer
+secondsleft = parseInt(secondsleft - 1);
+
+// clear inteval when the timer gets to 0
+if (secondsleft <=0) {
+	clearInterval(countdown);
+	// alert the user time is up and can no longer continue
+	for(i = secondsleft + 1; i > 0; i--) {
+		//console.log(secondsleft[i])
+		alert('time is up');
+	// change h2 to 'end of game'
+	$('h2').html('End of game');}
+	// clear count
+
+	// restart timer
+// }
 }
+// display countdown including seconds
+$('#timer').html(secondsleft + ' seconds');
+};
+
+// create the start button function
+function startgamefunction(event) {
+$('button').on('click', function(event) {
+	// call the timer function for when the button is clicked
+	timer();
+})
+};
+
+// calling the start game function
+startgamefunction();

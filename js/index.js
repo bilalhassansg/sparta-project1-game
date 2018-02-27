@@ -57,11 +57,14 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 
 // countdown timer from 30 seconds
 // set the time limit to 30 seconds
-	var secondsleft = 31;
+	var secondsleft = 30;
+
+	var countdown = false;
 
 function timer() {
 
 	secondsleft = parseInt(secondsleft - 1); // minus one second from the timer
+
 
 	if (secondsleft <=0) {
 		clearInterval(countdown);
@@ -69,8 +72,13 @@ function timer() {
 		for(i = secondsleft + 1; i > 0; i--) {
 			//console.log(secondsleft[i])
 			alert('time is up');
+
+
 		// change h2 to 'end of game'
-		$('h2').html('End of game');}
+			$('h2').html('End of game');
+			window.location.reload();
+			
+		}
 		// clear count
 
 		// restart timer
@@ -84,7 +92,7 @@ function timer() {
 function startgamefunction(event) {
 	$('button').on('click', function(event) {
 		// set interval to 1 second
-		var countdown = setInterval(timer, 1000);
+	countdown = setInterval(timer, 1000);
 		timer();
 	})
 }

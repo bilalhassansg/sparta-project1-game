@@ -62,7 +62,7 @@ function timer() {
 		// alert the user time is up and can no longer continue
 		for(i = secondsleft+1; i > 0; i--) {
 		alert('time is up');
-		word.value = true;
+		// change h2 to 'end of game'
 		$('h2').html('End of game');
 }
 	}

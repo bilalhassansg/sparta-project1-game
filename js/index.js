@@ -49,6 +49,7 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 	}
 	else{ 
 		alert('Fail');
+		window.location.reload();
 	}
 	// clearing the input box
 	//word.value = "";

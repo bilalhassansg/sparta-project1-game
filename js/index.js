@@ -4,6 +4,9 @@ var word = document.getElementById('wordword');
 // array of words
 var wordsarray = ['fuzzy', 'pizza' ,'quick', 'jumbo', 'chuck', 'jelly', 'joker', 'bumpy', 'prize', 'equals', 'reject', 'wizard', 'injury', 'mumble', 'jazzman', 'puzzled', 'zombies', 'hammock', 'cutback', 'knockoff', 'junkyard', 'hijacker', 'juggling', 'equipped', 'magazine', 'optimize', 'knocking','projects', 'acquired', 'jellybean', 'misjudged', 'judgement', 'technique', 'enjoyment', 'privatize', 'irritated', 'restarted', 'retreated', 'resistant', 'adjustable', 'transporter', 'terminology', 'surrounding', 'specialisms'];
 
+// count the input
+var countword = parseInt($('h3').attr('count'));
+
 // generate random word from array
 var firstword = Math.floor(Math.random()*wordsarray.length);
 
@@ -29,18 +32,18 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 	function newwordfromarray() {
 		$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
 
-		// var newrandom = arraytoheading;
-		// var newrandomtext = randomtext;
 	}
-
 
 	// be sure the correct value and random text is matching
 	// match user input to h2
 	if (value === randomtext) {
-		alert('Well done');
-		//alert(value.match(arraytoheading));
+
+		//alert('Well done'); // confirm word is correct
 		console.log(value);
+		// get a new random word from the array to display in h2
 		newwordfromarray();
+		// count how many words for each input
+		$('h3').html(++countword);
 	}
 	else{ 
 		alert('Fail');
@@ -52,7 +55,7 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 
 // countdown timer from 30 seconds
 
-var secondsleft = 10;
+var secondsleft = 15;
 var countdown = setInterval(timer, 1000); // set interval to 1 second
 
 function timer() {

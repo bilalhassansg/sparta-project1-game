@@ -5,9 +5,27 @@
 </head>
 <body>
 
+	<h1>Keyboard Warrior</h1>
+	<!-- this text will change when the game starts -->
+	<h2>Your word will apprear here.</h2>
+	<h3 count="0">Word count</h3>
+
+	<!-- start the game button -->
+	<button class="begincountdown">Begin game</button>
+
+	<p></p>
+
+	<span id="timer">Timer</span>
+
+	<form name="matchword" class="wordform">
+		Match word: 
+		<input type="text" name="inputword" id="wordword">
+		<input type="submit" name="Submit" class="Submitbutton">
+	</form>
+
 	<!-- link to CSS and JS pages -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-
 </body>
 </html>

@@ -12,16 +12,20 @@
 
 	<!-- start the game button -->
 	<button class="begincountdown">Begin game</button>
+	<!-- music playing in background -->
+	<embed hidden="true" src="image/matrix.mp3" autostart="true" id="missionimpossiblesound" controls="none">
 
-	<p></p>
+	<!-- <p></p> -->
 
-	<span id="timer">Timer</span>
+	<p id="timer">Timer</p>
 
+	<p>Match word above</p>
 	<form name="matchword" class="wordform">
-		Match word: 
 		<input type="text" name="inputword" id="wordword">
-		<input type="submit" name="Submit" class="Submitbutton">
+		<!-- <input type="submit" name="Submit" class="Submitbutton"> -->
 	</form>
+
+	<button type="button" onclick="location.href='instructions.html';">Instructions</button>
 
 	<!-- link to CSS and JS pages -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">

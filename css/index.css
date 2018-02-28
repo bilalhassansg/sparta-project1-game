@@ -1,4 +1,60 @@
 body {
 	text-align: center;
+	background-image: url('matrix.gif');
 }
 
+
+/*h1 keyboard warrior*/
+h1 {
+	color: white;
+	font-size: 500%;
+	margin-top: 1%;
+	font-family: 'Courier New';
+	text-shadow: 5px 5px MediumSeaGreen;
+}
+
+
+/*word the user is to guess*/
+h2 {
+	color: black;
+	font-size: 300%;
+	margin-top: 1%;
+	font-family: 'Courier New';
+}
+
+/*word count*/
+h3 {
+	color: white;
+	font-size: 250%;
+	text-shadow: 3px 3px MediumSeaGreen;
+	font-family: 'Courier New';
+	margin-top: 1%;
+}
+
+p {
+	font-family: 'Courier New';
+	font-size: 150%;
+	margin-top: 1%;
+}
+
+button {
+	border-radius: 100%;
+	background-color: black;
+	color: white;
+	font-family: 'Courier New';
+	font-size: 150%;
+	text-shadow: 1px 1px MediumSeaGreen;
+	width: auto;
+	height: 70px;
+	margin-top: 1%;
+	align-items: center;
+	size: auto;
+}
+
+span {
+	color: white;
+	font-family: 'Courier New';
+	font-size: 100%;
+	text-shadow: 2px 2px MediumSeaGreen;
+	margin-top: 1%;
+}

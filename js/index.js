@@ -10,6 +10,9 @@ var countword = parseInt($('h3').attr('count'));
 // generate random word from array
 var firstword = Math.floor(Math.random()*wordsarray.length);
 
+// change the heading2 text to have a random word from array
+var arraytoheading = $("h2").html(wordsarray[firstword]);
+
 // restart game
 var restartgame = false;
 
@@ -42,7 +45,7 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 		// get a new random word from the array to display in h2
 		newwordfromarray();
 		// count how many words for each input
-		$('h3').html(++countword);
+		$('h3').html('x' + ++countword);
 	}
 	else{ 
 		alert('Fail');
@@ -55,7 +58,7 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 
 // countdown timer from 30 seconds
 // set the time limit to 30 seconds
-	var secondsleft = 31;
+	var secondsleft = 30;
 
 	var countdown = false;
 
@@ -90,12 +93,7 @@ function timer() {
 function startgamefunction(event) {
 	$('button').on('click', function(event) {
 
-		// change the heading2 text to have a random word from array
-		var arraytoheading = $("h2").html(wordsarray[firstword]);
-		$('h2').css('color', 'green');
-
-		$('p').html('Time is ticking. Tick Tock.');
-
+		$('h2').css('color', 'green')
 		// set interval to 1 second
 	countdown = setInterval(timer, 1000);
 		timer();

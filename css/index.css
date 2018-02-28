@@ -58,3 +58,13 @@ span {
 	text-shadow: 2px 2px MediumSeaGreen;
 	margin-top: 1%;
 }
+
+pre{
+	color: white;
+	font-size: 150%;
+	text-shadow: 3px 3px MediumSeaGreen;
+	font-family: 'Courier New';
+	margin-top: 1%;
+	text-align: left !important;
+	margin-left: -15%;
+}

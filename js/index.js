@@ -13,15 +13,7 @@ var firstword = Math.floor(Math.random()*wordsarray.length);
 // change the heading2 text to have a random word from array
 var arraytoheading = $("h2").html(wordsarray[firstword]);
 
-// restart game
-var restartgame = false;
-
 var hideaudio = $('embed').html();
-
-// start game
-//var startgame = $('button');
-
-//startgamefunction();
 
 // get the user input from HTML
 document.querySelector('form.wordform').addEventListener('submit', function(event) {
@@ -30,72 +22,78 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 	word.value = '';
 
 
-	// create a variable for the user to match the word
-	var randomtext = $(arraytoheading).html();
+// create a variable for the user to match the word
+var randomtext = $(arraytoheading).html();
 
-	function newwordfromarray() {
-		$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
+function newwordfromarray() {
+	$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
 
-	}
+}
 
-	// be sure the correct value and random text is matching
-	// match user input to h2
-	if (value === randomtext) {
+// be sure the correct value and random text is matching
+// match user input to h2
+if (value === randomtext) {
 
-		//alert('Well done'); // confirm word is correct
-		console.log(value);
-		// get a new random word from the array to display in h2
-		newwordfromarray();
-		// count how many words for each input
-		$('h3').html('x' + ++countword);
-	}
-	else{ 
-		alert('Fail');
-		window.location.reload();
-	}
-	// clearing the input box
-	//word.value = "";
+	//alert('Well done'); // confirm word is correct
+	console.log(value);
+	// get a new random word from the array to display in h2
+	newwordfromarray();
+	// count how many words for each input
+	$('h3').html('x' + ++countword);
+}
+else{
+	$('h3').remove();
+	$('button').remove();
+	$('p').remove();
+	$('form').remove(); 
+	$('h2').html('Your socre is: ' + countword);
+	$('.button-wrapper').append("<button onclick='window.location.reload()'>Play Again</button>");
+}
+// clearing the input box
+//word.value = "";
+
+// if the user gets more then 13 words in 30 seconds, they will see the spartan image
+
 
 });
 
+
 // countdown timer from 30 seconds
 // set the time limit to 30 seconds
-	var secondsleft = 30;
+var secondsleft = 30;
 
-	var countdown = false;
+var countdown = false;
 
 function timer() {
 
-	secondsleft = parseInt(secondsleft - 1); // minus one second from the timer
+secondsleft = parseInt(secondsleft - 1); // minus one second from the timer
 
 
-	if (secondsleft <=0) {
-		clearInterval(countdown);
-		// alert the user time is up and can no longer continue
-		for(i = secondsleft + 1; i > 0; i--) {
+if (secondsleft <=0) {
+	clearInterval(countdown);
+	// alert the user time is up and can no longer continue
 
-			// remove elements from the page when the timer runs out
+	// remove elements from the page when the timer runs out
 
-			$('h3').remove();
-			$('button').remove();
-			$('p').remove();
-			$('form').remove();
+	$('h3').remove();
+	$('button').remove();
+	$('p').remove();
+	$('form').remove();
+	// clear count
+	// change h2 to the score the user got
+	$('h2').html('Your socre is: ' + countword);
+	$('.button-wrapper').append("<button onclick='window.location.reload()'>Play Again</button>");
 
 
-
-		// change h2 to 'end of game'
-			$('h2').html('End of game');
-			//window.location.reload();
-			
-		}
-		// clear count
-
-		// restart timer
-	// }
+	// if the user gets more than 13; then (s)he is considered a spartan
+	if (countword >= 13) {
+		$('.h3container').append("<h3> YOU ARE A SPARTAN </h3>");
+		$('.h3container').append("<img src='image/spartanwinner.jpg' width='30%' height='50%'/>");
+	}
 }
-	// display countdown including seconds
-	//document.getElementById('timer').innerHTML=secondsleft + ' seconds';
-	$('#timer').html(secondsleft + ' seconds');
+// display countdown including seconds
+//document.getElementById('timer').innerHTML=secondsleft + ' seconds';
+$('#timer').html(secondsleft + ' seconds');
 };
 
 function startgamefunction(event) {
@@ -106,11 +104,11 @@ function startgamefunction(event) {
 		$('h2').css('text-shadow', '4px 4px MediumSeaGreen');
 		$('p').css('color', 'white');
 		$('p').css('text-shadow', '2px 2px MediumSeaGreen');
-		// $('p').css('font-family', 'Courier New');
-		// set interval to 1 second
+	// $('p').css('font-family', 'Courier New');
+	// set interval to 1 second
 	countdown = setInterval(timer, 1000);
-		timer();
-	})
+	timer();
+})
 }
 
 startgamefunction();

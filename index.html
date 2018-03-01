@@ -8,10 +8,15 @@
 	<h1>Keyboard Warrior</h1>
 	<!-- this text will change when the game starts -->
 	<h2>Your word will apprear here.</h2>
+	<div class="h3container">
 	<h3 count="0">Word count</h3>
+	</div>
 
 	<!-- start the game button -->
-	<button class="begincountdown">Begin game</button>
+	<div class="button-wrapper">
+		<button class="begincountdown">Begin game</button>
+	</div>
+
 	<!-- music playing in background -->
 	<embed hidden="true" src="image/matrix.mp3" autostart="true" id="missionimpossiblesound" controls="none">
 
@@ -26,6 +31,8 @@
 	</form>
 
 	<button type="button" onclick="location.href='instructions.html';">Instructions</button>
+
+	<button id="restart" onclick="location.href='index.html';">Restart game</button>
 
 	<!-- link to CSS and JS pages -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">

@@ -2,8 +2,6 @@ body {
 	text-align: center;
 	background-image: url('matrix.gif');
 }
-
-
 /*h1 keyboard warrior*/
 h1 {
 	color: white;
@@ -12,8 +10,6 @@ h1 {
 	font-family: 'Courier New';
 	text-shadow: 5px 5px MediumSeaGreen;
 }
-
-
 /*word the user is to guess*/
 h2 {
 	color: white;
@@ -31,7 +27,7 @@ h3 {
 	font-family: 'Courier New';
 	margin-top: 1%;
 }
-
+/*match the word in yellow*/
 p {
 	font-family: 'Courier New';
 	font-size: 150%;
@@ -43,7 +39,7 @@ p {
 	font-size: 150%;
 	margin-top: 1%;
 }
-
+/*all buttons*/
 button {
 	border-radius: 100%;
 	background-color: black;
@@ -57,15 +53,7 @@ button {
 	align-items: center;
 	size: auto;
 }
-
-span {
-	color: white;
-	font-family: 'Courier New';
-	font-size: 100%;
-	text-shadow: 2px 2px MediumSeaGreen;
-	margin-top: 1%;
-}
-
+/*instructions*/
 pre{
 	color: white;
 	font-size: 150%;
@@ -83,7 +71,7 @@ h4 {
 	font-family: 'Courier New';
 	margin-top: 1%;
 }
-
+/*restart button*/
 #restart{
 	visibility: hidden;
 	display: block;

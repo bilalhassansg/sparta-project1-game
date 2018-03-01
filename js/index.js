@@ -73,16 +73,12 @@ function timer() {
 		clearInterval(countdown);
 		// alert the user time is up and can no longer continue
 		for(i = secondsleft + 1; i > 0; i--) {
-			//console.log(secondsleft[i])
-			//alert('time is up');
-			$('h3').html(null);
-			$('button').html(null);
-
-
+			// taken to the timesup page
+			window,location.replace('timesup.html');
 
 		// change h2 to 'end of game'
-			$('h2').html('End of game');
-			window.location.reload();
+			// $('h2').html('End of game');
+			// window.location.reload();
 			
 		}
 		// clear count

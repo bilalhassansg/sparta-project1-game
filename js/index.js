@@ -13,6 +13,12 @@ var firstword = Math.floor(Math.random()*wordsarray.length);
 // change the heading2 text to have a random word from array
 var arraytoheading = $("h2").html(wordsarray[firstword]);
 
+function newwordfromarray() {
+	$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
+
+}
+
+// create function
 function typeofwinner(event) {
 if (countword >= 12) {
 		$('.h3container').append("<h3> YOU ARE A SPARTAN </h3>");
@@ -38,10 +44,7 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 // create a variable for the user to match the word
 var randomtext = $(arraytoheading).html();
 // function to get another random word from the array
-function newwordfromarray() {
-	$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
 
-}
 // match user input to h2
 if (value === randomtext) {
 	// get a new random word from the array to display in h2
@@ -96,7 +99,7 @@ $('#timer').css('font-size', '+=2');
 // create a function to start the game on button click
 function startgamefunction(event) {
 	$('.begincountdown').on('click', function(event) {
-
+		newwordfromarray();
 		// override the CSS file and change the layout for when the button is clicked
 		$('h2').css('color', 'yellow');
 		$('h2').css('text-shadow', '4px 4px MediumSeaGreen');
@@ -108,5 +111,7 @@ function startgamefunction(event) {
 	timer();
 })
 }
+
+$('h2').html('Your word will appear here');
 // call the startgamefunction for the game to start when the button is clicked
 startgamefunction();

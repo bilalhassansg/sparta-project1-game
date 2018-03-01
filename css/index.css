@@ -16,7 +16,8 @@ h1 {
 
 /*word the user is to guess*/
 h2 {
-	color: black;
+	color: white;
+	text-shadow: 4px 4px MediumSeaGreen;
 	font-size: 300%;
 	margin-top: 1%;
 	font-family: 'Courier New';

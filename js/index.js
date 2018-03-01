@@ -94,6 +94,7 @@ if (secondsleft <=0) {
 // display countdown including seconds
 //document.getElementById('timer').innerHTML=secondsleft + ' seconds';
 $('#timer').html(secondsleft + ' seconds');
+$('#timer').css('font-size', '+=2');
 };
 
 function startgamefunction(event) {

@@ -37,6 +37,12 @@ p {
 	margin-top: 1%;
 }
 
+#timer {
+	font-family: 'Courier New';
+	font-size: 150%;
+	margin-top: 1%;
+}
+
 button {
 	border-radius: 100%;
 	background-color: black;

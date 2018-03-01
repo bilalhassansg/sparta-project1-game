@@ -21,11 +21,8 @@ document.querySelector('form.wordform').addEventListener('submit', function(even
 	var value = word.value;
 	// clear the input for next word
 	word.value = '';
-
-
 // create a variable for the user to match the word
 var randomtext = $(arraytoheading).html();
-
 // function to get another random word from the array
 function newwordfromarray() {
 	$('h2').html(wordsarray[Math.floor(Math.random()*wordsarray.length)]);
@@ -50,20 +47,15 @@ else{
 	$('.button-wrapper').append("<button onclick='window.location.reload()'>Play Again</button>");
 }
 
-
 });
 // set the time limit to 30 seconds
 var secondsleft = 3;
-
 // make the countdown false so the timer does not start
 var countdown = false;
-
 // create function of the timer
 function timer() {
-
 // decrease the timer by one second each time
 secondsleft = parseInt(secondsleft - 1); // minus one second from the timer
-
 // if the timer reaches or is less than 0; clear the countdown interval so the timer can start again
 if (secondsleft <=0) {
 	clearInterval(countdown);
@@ -88,30 +80,27 @@ if (secondsleft <=0) {
 		$('.h3container').append("<h3> You are a new recruit. Keep trying. </h3>");
 		// get the image of the new recruit in the images folder
 		$('.h3container').append("<img src='image/cap_rogers.jpeg' width='20%' height='40%'/>");
-
-
-	}
+		}
 }
 // display countdown including seconds
-//document.getElementById('timer').innerHTML=secondsleft + ' seconds';
 $('#timer').html(secondsleft + ' seconds');
 // increase font size
 $('#timer').css('font-size', '+=2');
 };
-
+// create a function to start the game on button click
 function startgamefunction(event) {
 	$('.begincountdown').on('click', function(event) {
 
-
+		// override the CSS file and change the layout for when the button is clicked
 		$('h2').css('color', 'yellow');
 		$('h2').css('text-shadow', '4px 4px MediumSeaGreen');
 		$('p').css('color', 'white');
 		$('p').css('text-shadow', '2px 2px MediumSeaGreen');
-	// $('p').css('font-family', 'Courier New');
 	// set interval to 1 second
 	countdown = setInterval(timer, 1000);
+	// call the timer function that has been created
 	timer();
 })
 }
-
+// call the startgamefunction for the game to start when the button is clicked
 startgamefunction();

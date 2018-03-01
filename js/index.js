@@ -13,6 +13,20 @@ var firstword = Math.floor(Math.random()*wordsarray.length);
 // change the heading2 text to have a random word from array
 var arraytoheading = $("h2").html(wordsarray[firstword]);
 
+function typeofwinner(event) {
+if (countword >= 12) {
+		$('.h3container').append("<h3> YOU ARE A SPARTAN </h3>");
+		// get the image of the spartan to appear from the images folder
+		$('.h3container').append("<img src='image/spartanwinner.jpg' width='30%' height='50%'/>");
+	}
+	else {
+		// if the user does not meet the if statement; they are considered a new recruit
+		$('.h3container').append("<h3> You are a new recruit. Keep trying. </h3>");
+		// get the image of the new recruit in the images folder
+		$('.h3container').append("<img src='image/cap_rogers.jpeg' width='20%' height='40%'/>");
+		}
+	}
+
 // get the user input from HTML
 document.querySelector('form.wordform').addEventListener('submit', function(event) {
 	// prevent default action from happening
@@ -45,11 +59,13 @@ else{
 	$('h2').html('Your socre is: ' + countword);
 		// once everything is removed; a new button 'start again' will replace the 'begin game' button
 	$('.button-wrapper').append("<button onclick='window.location.reload()'>Play Again</button>");
+	// call the type of winner function
+	typeofwinner();
 }
 
 });
-// set the time limit to 30 seconds
-var secondsleft = 3;
+// set the time limit to 31 seconds
+var secondsleft = 31;
 // make the countdown false so the timer does not start
 var countdown = false;
 // create function of the timer
@@ -69,18 +85,8 @@ if (secondsleft <=0) {
 	$('h2').html('Your socre is: ' + countword);
 			// once everything is removed; a new button 'start again' will replace the 'begin game' button
 	$('.button-wrapper').append("<button onclick='window.location.reload()'>Play Again</button>");
-	// if the user gets more than 12; then (s)he is considered a spartan
-	if (countword >= 12) {
-		$('.h3container').append("<h3> YOU ARE A SPARTAN </h3>");
-		// get the image of the spartan to appear from the images folder
-		$('.h3container').append("<img src='image/spartanwinner.jpg' width='30%' height='50%'/>");
-	}
-	else {
-		// if the user does not meet the if statement; they are considered a new recruit
-		$('.h3container').append("<h3> You are a new recruit. Keep trying. </h3>");
-		// get the image of the new recruit in the images folder
-		$('.h3container').append("<img src='image/cap_rogers.jpeg' width='20%' height='40%'/>");
-		}
+	// call the type of winner function
+	typeofwinner();
 }
 // display countdown including seconds
 $('#timer').html(secondsleft + ' seconds');

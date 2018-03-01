@@ -25,7 +25,7 @@ var hideaudio = $('embed').html();
 
 // get the user input from HTML
 document.querySelector('form.wordform').addEventListener('submit', function(event) {
-	event.preventDefault();
+	event.preventDefault(); 
 	var value = word.value;
 	word.value = '';
 
@@ -74,7 +74,10 @@ function timer() {
 		// alert the user time is up and can no longer continue
 		for(i = secondsleft + 1; i > 0; i--) {
 			//console.log(secondsleft[i])
-			alert('time is up');
+			//alert('time is up');
+			$('h3').html(null);
+			$('button').html(null);
+
 
 
 		// change h2 to 'end of game'
@@ -96,8 +99,8 @@ function startgamefunction(event) {
 	$('.begincountdown').on('click', function(event) {
 
 
-		$('h2').css('color', 'white');
-		$('h2').css('text-shadow', '5px 5px MediumSeaGreen');
+		$('h2').css('color', 'yellow');
+		$('h2').css('text-shadow', '4px 4px MediumSeaGreen');
 		$('p').css('color', 'white');
 		$('p').css('text-shadow', '2px 2px MediumSeaGreen');
 		// $('p').css('font-family', 'Courier New');

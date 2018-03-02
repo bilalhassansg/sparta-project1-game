@@ -8,20 +8,35 @@
 	<h1>Keyboard Warrior</h1>
 	<!-- this text will change when the game starts -->
 	<h2>Your word will apprear here.</h2>
+	<!-- div to hold the h3 -->
+	<div class="h3container">
 	<h3 count="0">Word count</h3>
+	</div>
 
-	<!-- start the game button -->
-	<button class="begincountdown">Begin game</button>
+	<!-- start the game button in a div-->
+	<div class="button-wrapper">
+		<button class="begincountdown">Begin game</button>
+	</div>
 
-	<p></p>
+	<!-- music playing in background -->
+	<embed hidden="true" src="image/matrix.mp3" autostart="true" id="missionimpossiblesound" controls="none">
 
-	<span id="timer">Timer</span>
+	<!-- timer in p tag to make it clear -->
+	<p id="timer">Timer</p>
 
+	<p>Match the word in yellow</p>
+	<!-- match word from this html page to the js page -->
 	<form name="matchword" class="wordform">
-		Match word: 
-		<input type="text" name="inputword" id="wordword">
-		<input type="submit" name="Submit" class="Submitbutton">
+		<!-- autocomplete so it will not hold the input previous put in -->
+		<input type="text" name="inputword" id="wordword" autocomplete="off">
+		<!-- <input type="submit" name="Submit" class="Submitbutton"> -->
 	</form>
+
+	<!-- instructions button -->
+	<button type="button" onclick="location.href='instructions.html';">Instructions</button>
+
+	<!-- restart game button -->
+	<button id="restart" onclick="location.href='index.html';">Restart game</button>
 
 	<!-- link to CSS and JS pages -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">

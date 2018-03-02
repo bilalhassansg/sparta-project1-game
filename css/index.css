@@ -1,4 +1,78 @@
 body {
 	text-align: center;
+	background-image: url('matrix.gif');
+}
+/*h1 keyboard warrior*/
+h1 {
+	color: white;
+	font-size: 500%;
+	margin-top: 1%;
+	font-family: 'Courier New';
+	text-shadow: 5px 5px MediumSeaGreen;
+}
+/*word the user is to guess*/
+h2 {
+	color: white;
+	text-shadow: 4px 4px MediumSeaGreen;
+	font-size: 300%;
+	margin-top: 1%;
+	font-family: 'Courier New';
 }
 
+/*word count*/
+h3 {
+	color: white;
+	font-size: 250%;
+	text-shadow: 3px 3px MediumSeaGreen;
+	font-family: 'Courier New';
+	margin-top: 1%;
+}
+/*match the word in yellow*/
+p {
+	font-family: 'Courier New';
+	font-size: 150%;
+	margin-top: 1%;
+}
+
+#timer {
+	font-family: 'Courier New';
+	font-size: 150%;
+	margin-top: 1%;
+}
+/*all buttons*/
+button {
+	border-radius: 100%;
+	background-color: black;
+	color: white;
+	font-family: 'Courier New';
+	font-size: 150%;
+	text-shadow: 1px 1px MediumSeaGreen;
+	width: auto;
+	height: 70px;
+	margin-top: 1%;
+	align-items: center;
+	size: auto;
+}
+/*instructions*/
+pre{
+	color: white;
+	font-size: 150%;
+	text-shadow: 3px 3px MediumSeaGreen;
+	font-family: 'Courier New';
+	margin-top: 1%;
+	text-align: left !important;
+	margin-left: -15%;
+}
+
+h4 {
+	color: white;
+	font-size: 150%;
+	text-shadow: 3px 3px MediumSeaGreen;
+	font-family: 'Courier New';
+	margin-top: 1%;
+}
+/*restart button*/
+#restart{
+	visibility: hidden;
+	display: block;
+}
